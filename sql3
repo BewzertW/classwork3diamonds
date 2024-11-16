@@ -1,0 +1,12 @@
+import sqlite3
+connection = sqlite3.connect("main.sql", 5)
+cur = connection.cursor()
+cur.execute("INSERT INTO students VALUES ('John', 'Doe', 'Blue');")
+connection.commit()
+cur.execute("INSERT INTO students VALUES ('Rustem', 'Amirkhanuly', 'Purple');")
+connection.commit()
+cur.execute("INSERT INTO students VALUES ('Michael', 'Johnson', 'Red');")
+connection.commit()
+cur.execute("SELECT * FROM students;")
+res = cur.fetchall()
+print(res)
